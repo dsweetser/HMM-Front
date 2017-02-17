@@ -41,6 +41,11 @@ const signInNo = () =>{
     '<div class="row"><div class="col-xs-10 red alert" id="temp"><h3>Invalid Username or Password</h3></div></div>');
 };
 
+const signInYes = () => {
+  $('.login').hide();
+  $('.userstuff').show();
+};
+
 module.exports = {
   failure,
   success,
@@ -49,4 +54,5 @@ module.exports = {
   changePasswordYes,
   changePasswordNo,
   signInNo,
+  signInYes
 };

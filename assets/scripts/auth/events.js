@@ -32,10 +32,9 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then((response) => {
       store.user = response.user;
-    $('#sign-in')[0].reset();
-    // $('.login').hide();
-    // $('.userstuff').show();
+
  })
+    .then(ui.signInYes)
     .catch(ui.signInNo);
     $('#sign-in')[0].reset();
 };
@@ -60,8 +59,8 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault();
-  // $('.login').show();
-  // $('.userstuff').hide();
+  $('.login').show();
+  $('.userstuff').hide();
   if ($('.alert')) {
     $('.alert').remove();
   }

@@ -7,6 +7,7 @@ const sessionEvents = require('./sessions/events');
 
 $(() => {
   setAPIOrigin(location, config);
+  $('.userstuff').hide();
   authEvents.addHandlers();
   sessionEvents.addHandlers();
 });
