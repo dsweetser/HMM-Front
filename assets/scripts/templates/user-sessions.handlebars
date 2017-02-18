@@ -1,0 +1,12 @@
+{{#each sessions as |session|}}
+
+  <ul><li><h1> <small>Game: {{session.game.name}}</small></h1></li>
+    <li>Number of Players: {{session.players}}</li>
+    <li>Your Rating: {{session.rating}}
+  <div>
+    {{#if session.notes}}
+      <li>{{session.notes}}</li>
+    {{/if}}
+  </div></ul>
+
+{{/each}}

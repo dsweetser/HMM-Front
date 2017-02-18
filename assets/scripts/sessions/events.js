@@ -20,10 +20,11 @@ const showMySessions = function (event) {
   }
   return sessions;
 };
+// temporary thing, should do with handlebars
   api.getSessions()
-  .then((response) =>
-  console.log(mySessions(response))
-);
+  .then((response) => {
+  ui.mySessionsSuccess(mySessions(response));
+});
 };
 
 const addHandlers = () => {
