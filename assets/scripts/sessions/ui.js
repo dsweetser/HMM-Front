@@ -11,7 +11,7 @@ const failure = (error) => {
 };
 
 const mySessionsSuccess = (data) => {
-  console.log (data);
+  $('#results').empty();
   let sessionsList = userSessions({ sessions: data });
   console.log(sessionsList);
   $('#results').append(sessionsList);
