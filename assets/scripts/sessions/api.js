@@ -13,6 +13,18 @@ const getSessions = function () {
   });
 };
 
+const newSession = function (data) {
+  return $.ajax({
+    url: `${config.apiOrigin}/sessions/`,
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+    data
+  });
+};
+
 module.exports = {
-  getSessions
+  getSessions,
+  newSession
 };
