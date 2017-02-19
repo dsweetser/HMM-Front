@@ -45,9 +45,20 @@ const updateSession = function (data, id) {
   });
 };
 
+const deleteSession = function (id) {
+  return $.ajax({
+    url: `${config.apiOrigin}/sessions/${id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
 module.exports = {
   getSessions,
   newSession,
   updateSession,
   getSession,
+  deleteSession,
 };

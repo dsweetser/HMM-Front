@@ -59,11 +59,20 @@ const updateMySession = function (event) {
   .catch(ui.failure);
 };
 
+const destroySession = function (event) {
+  event.preventDefault();
+  let id = getFormFields(event.target);
+  console.log(id.id);
+  api.deleteSession(id.id)
+  .then(ui.success)
+  .catch(ui.failure);
+};
 
 const addHandlers = () => {
   $('#get-mine').on('submit', showMySessions);
   $('#create-session').on('submit', recordNewSession);
   $('#update-session').on('submit', updateMySession);
+  $('#delete-session').on('submit', destroySession);
 };
 
 module.exports ={
