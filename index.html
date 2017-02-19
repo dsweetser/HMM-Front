@@ -75,15 +75,16 @@
 </div>
 
 <div class="app">
+  <div class="row">
   <p class="login intro">Hello, Welcome to How Many Meeples! This website allows you to log
     plays of your favorite board games and then interact with that data in various
     fun and interesting ways! Sign up and log in to get started!</p>
   <form class="sessions userstuff" id="get-mine">
     <fieldset>
-      <legend>Get My Sessions</legend>
       <input type="submit" name="submit" value="Get My Sessions">
     </fieldset>
   </form>
+</div>
 
   <div class="row">
   <form class="sessions userstuff" id="create-sessions">
@@ -92,6 +93,7 @@
       <label>Game ID<input type="number" step="1" name="game_id"></label>
       <label>Number of Players<input type="number" step="1" name="players"></label>
       <label>Rating (1-5, whole numbers only)<input type="number" step="1" min="1" max="5" name="rating"></label>
+      <label>Session Notes</label><input type="text" class= "notes" name="notes">
       <input type="submit" value="Create New Session">
     </fieldset>
   </form>
