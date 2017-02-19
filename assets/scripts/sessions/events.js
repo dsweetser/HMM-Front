@@ -26,7 +26,7 @@ const showMySessions = function (event) {
 });
 };
 
-// patches a new play to the server
+// posts a new play to the server
 const recordNewSession = function (event) {
   event.preventDefault();
   let data = {};
@@ -42,9 +42,28 @@ const recordNewSession = function (event) {
   .catch(ui.failure);
 };
 
+// updates a session with the server
+const updateMySession = function (event) {
+  event.preventDefault();
+  let data = {};
+  data.session = getFormFields(event.target);
+  // sets up the original session data to fill nulls
+  // console.log(data.session.id);
+  // let oldData = api.getSession(data.session.id);
+  // console.log(oldData);
+  // if (!data.session.game_id) {
+  //   data.session.game_id = oldData.session.game_id;
+  // }
+  api.updateSession(data, data.session.id)
+  .then(ui.success)
+  .catch(ui.failure);
+};
+
+
 const addHandlers = () => {
   $('#get-mine').on('submit', showMySessions);
-  $('#create-sessions').on('submit', recordNewSession);
+  $('#create-session').on('submit', recordNewSession);
+  $('#update-session').on('submit', updateMySession);
 };
 
 module.exports ={
