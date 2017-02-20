@@ -33,12 +33,12 @@ const recordNewSession = function (event) {
   let data = {};
   data.session = getFormFields(event.target);
   // sets data to their types - possibly unneeded but paranoia
-  data.session.user_id = Math.floor(store.user.id);
+  // data.session.user_id = Math.floor(store.user.id);
   data.session.game_id = Math.floor(data.session.game_id);
   data.session.players = Math.floor(data.session.players);
   data.session.rating = Math.floor(data.session.rating);
   data.session.notes = data.session.notes.toString();
-  console.log(data.session.notes);
+  console.log(data);
   api.newSession(data)
   .then((response) =>{
     ui.newSessionResponse(response);
@@ -51,6 +51,7 @@ const updateMySession = function (event) {
   event.preventDefault();
   let data = {};
   data.session = getFormFields(event.target);
+  console.log(api.getSession(data.session.id));
   // sets up the original session data to fill nulls
   // console.log(data.session.id);
   // let oldData = api.getSession(data.session.id);
@@ -62,17 +63,16 @@ const updateMySession = function (event) {
   .then((response) => {
     ui.updated(response);
   })
-  .catch(ui.problem);
+  .catch(ui.destroyOrUpdateError);
 };
 
 //destroys a session
 const destroySession = function (event) {
   event.preventDefault();
   let id = getFormFields(event.target);
-  console.log(id.id);
   api.deleteSession(id.id)
   .then(ui.destroyed)
-  .catch(ui.problem);
+  .catch(ui.destroyOrUpdateError);
 };
 
 const addHandlers = () => {

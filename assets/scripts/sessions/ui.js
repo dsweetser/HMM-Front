@@ -36,7 +36,13 @@ const destroyed = function() {
 
 const updated = function (data) {
   $('#results').empty();
+  console.log(data.session);
   $('#results').append(updatedSession(data.session));
+};
+
+const destroyOrUpdateError = function() {
+  $('#results').empty();
+  $('#results').append('<h3 class="red">Something has gone wrong - are you sure this is your session?</h3>');
 };
 
 module.exports = {
@@ -47,4 +53,5 @@ module.exports = {
   newSessionResponse,
   destroyed,
   updated,
+  destroyOrUpdateError,
 };
