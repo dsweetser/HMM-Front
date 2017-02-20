@@ -10,6 +10,11 @@ const failure = (error) => {
   console.error(error);
 };
 
+const problem = () => {
+  $('#results').empty();
+  $('#results').append('=<h3 class="red">Oh dear, something has gone awry...');
+};
+
 const gameShow = (response) => {
   console.log(response);
   $('#results').empty();
@@ -20,4 +25,5 @@ module.exports = {
   failure,
   success,
   gameShow,
+  problem,
 };

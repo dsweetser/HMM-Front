@@ -12,10 +12,10 @@ const showGame = function(event) {
   console.log(data.id);
   api.getGame(data.id)
   .then((response) => {
-    $('#results').append(response.game.name);
+    $('#results').append('<h3>' + response.game.name + '</h3>');
   //  ui.gameShow(response);
   })
-  .catch(ui.failure);
+  .catch(ui.problem);
 };
 
 const showGames = function (event) {
@@ -23,7 +23,8 @@ const showGames = function (event) {
   api.getGames()
   .then((response) => {
     ui.gameShow(response);
-  });
+  })
+  .catch(ui.problem);
 //  ui.gameShow(api.getGames());
 };
 
