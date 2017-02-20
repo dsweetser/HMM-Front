@@ -22,7 +22,8 @@ const showMySessions = function (event) {
 };
   api.getSessions()
   .then((response) => {
-  ui.mySessionsSuccess(mySessions(response));
+  ui.mySessionsSuccess(mySessions(response))
+  .catch(ui.problem);
 });
 };
 
@@ -38,8 +39,10 @@ const recordNewSession = function (event) {
   data.session.notes = data.session.notes.toString();
   console.log(data.session.notes);
   api.newSession(data)
-  .then(ui.success)
-  .catch(ui.failure);
+  .then((response) =>{
+    ui.newSessionResponse(response);
+  })
+  .catch(ui.problem);
 };
 
 // updates a session with the server
@@ -56,7 +59,7 @@ const updateMySession = function (event) {
   // }
   api.updateSession(data, data.session.id)
   .then(ui.success)
-  .catch(ui.failure);
+  .catch(ui.problem);
 };
 
 const destroySession = function (event) {
@@ -65,7 +68,7 @@ const destroySession = function (event) {
   console.log(id.id);
   api.deleteSession(id.id)
   .then(ui.success)
-  .catch(ui.failure);
+  .catch(ui.problem);
 };
 
 const addHandlers = () => {
