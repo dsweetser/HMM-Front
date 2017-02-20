@@ -12,8 +12,8 @@ const showGame = function(event) {
   console.log(data.id);
   api.getGame(data.id)
   .then((response) => {
-    console.log(response.game.name)
-    ui.gameShow(response);
+    $('#results').append(response.game.name);
+  //  ui.gameShow(response);
   })
   .catch(ui.failure);
 };
