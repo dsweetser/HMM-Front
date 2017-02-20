@@ -20,7 +20,7 @@ const mySessionsSuccess = (data) => {
 
 const problem = () => {
   $('#results').empty();
-  $('#results').append('=<h3 class="red">Oh dear, something has gone awry...');
+  $('#results').append('<h3 class="red">Oh dear, something has gone awry...');
 };
 
 const newSessionResponse = (data) => {
@@ -29,10 +29,16 @@ const newSessionResponse = (data) => {
   $('#results').append(newSession(data.session));
 };
 
+const destroyed = function() {
+  $('#results').empty();
+  $('#results').append("<h3>Session Successfully Deleted</h3>");
+};
+
 module.exports = {
   success,
   failure,
   mySessionsSuccess,
   problem,
   newSessionResponse,
+  destroyed,
 };

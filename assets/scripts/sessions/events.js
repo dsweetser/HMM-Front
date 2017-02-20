@@ -32,6 +32,7 @@ const recordNewSession = function (event) {
   event.preventDefault();
   let data = {};
   data.session = getFormFields(event.target);
+  // sets data to their types - possibly unneeded but paranoia
   data.session.user_id = Math.floor(store.user.id);
   data.session.game_id = Math.floor(data.session.game_id);
   data.session.players = Math.floor(data.session.players);
@@ -62,12 +63,13 @@ const updateMySession = function (event) {
   .catch(ui.problem);
 };
 
+//destroys a session
 const destroySession = function (event) {
   event.preventDefault();
   let id = getFormFields(event.target);
   console.log(id.id);
   api.deleteSession(id.id)
-  .then(ui.success)
+  .then(ui.destroyed)
   .catch(ui.problem);
 };
 
