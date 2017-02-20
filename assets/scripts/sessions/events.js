@@ -59,7 +59,9 @@ const updateMySession = function (event) {
   //   data.session.game_id = oldData.session.game_id;
   // }
   api.updateSession(data, data.session.id)
-  .then(ui.success)
+  .then((response) => {
+    ui.updated(response);
+  })
   .catch(ui.problem);
 };
 

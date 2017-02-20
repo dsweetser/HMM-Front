@@ -2,6 +2,7 @@
 
 const userSessions = require ('../templates/user-sessions.handlebars');
 const newSession = require ('../templates/new-session.handlebars');
+const updatedSession = require ('../templates/update-session.handlebars');
 
 const success = (data) => {
   console.log(data);
@@ -25,13 +26,17 @@ const problem = () => {
 
 const newSessionResponse = (data) => {
   $('#results').empty();
-  console.log(data.session);
   $('#results').append(newSession(data.session));
 };
 
 const destroyed = function() {
   $('#results').empty();
   $('#results').append("<h3>Session Successfully Deleted</h3>");
+};
+
+const updated = function (data) {
+  $('#results').empty();
+  $('#results').append(updatedSession(data.session));
 };
 
 module.exports = {
@@ -41,4 +46,5 @@ module.exports = {
   problem,
   newSessionResponse,
   destroyed,
+  updated,
 };
