@@ -18,10 +18,20 @@ const showGame = function(event) {
   .catch(ui.failure);
 };
 
+const showGames = function (event) {
+  event.preventDefault();
+  api.getGames()
+  .then((response) => {
+    ui.gameShow(response);
+  });
+//  ui.gameShow(api.getGames());
+};
+
 
 
 const addHandlers = () => {
   $('#showGame').on('submit', showGame);
+  $('#getGames').on('submit', showGames);
 };
 
 module.exports = {

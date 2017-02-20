@@ -11,6 +11,8 @@ const failure = (error) => {
 };
 
 const gameShow = (response) => {
+  console.log(response);
+  $('#results').empty();
   $('#results').append(gameDisplay(response));
 };
 
