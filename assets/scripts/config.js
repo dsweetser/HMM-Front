@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://enigmatic-plains-94238.herokuapp.com/',
+    production: 'https://enigmatic-plains-94238.herokuapp.com',
   },
 };
 
