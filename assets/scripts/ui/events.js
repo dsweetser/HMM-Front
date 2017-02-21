@@ -31,12 +31,18 @@ const getMySessions = function() {
   $('#get-mine').toggle();
 };
 
+const createSession = function() {
+  hideAll();
+  $('#create-session').toggle();
+};
+
 
 const addHandlers = () => {
   $('#show_a_game').on('click', showGame);
   $('#get_games').on('click', getGames);
   $('#create_game').on('click', createGame);
   $('#get_mine').on('click', getMySessions);
+  $('#create_session').on('click', createSession);
 };
 
 module.exports ={
