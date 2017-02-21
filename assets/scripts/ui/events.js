@@ -26,11 +26,17 @@ const createGame = function() {
   $('#createGame').toggle();
 };
 
+const getMySessions = function() {
+  hideAll();
+  $('#get-mine').toggle();
+};
+
 
 const addHandlers = () => {
   $('#show_a_game').on('click', showGame);
   $('#get_games').on('click', getGames);
   $('#create_game').on('click', createGame);
+  $('#get_mine').on('click', getMySessions);
 };
 
 module.exports ={
