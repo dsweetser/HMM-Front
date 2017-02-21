@@ -1,7 +1,7 @@
 'use strict';
 
 const gameDisplay = require ('../templates/game-display.handlebars');
-const newGame = require ('../templates/new-game.handlebars')
+const newGame = require ('../templates/new-game.handlebars');
 
 const success = (data) => {
   console.log(data);
