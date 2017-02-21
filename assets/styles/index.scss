@@ -1,13 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $dark: #000;
-$red: #f00;
+$medgreen: #05a335;
+$red: #dd2407;
+$medblue: #0a6a8a;
+$lightorange: #fda447;
+
+
+body {
+  background: $medblue;
+  color: $lightorange;
+}
 
 .red {
   color: $red;
 }
 
 .auth {
+  background: $medgreen;
   border: 10px solid $dark;
   margin-bottom: 20px;
   padding: 5px;
@@ -18,10 +28,11 @@ $red: #f00;
 }
 
 .larger {
+  color: $lightorange;
   font-size: 1.5em;
   font-weight: 500;
 }
 
 .notes {
-  width: 600px;
+  width: 60%;
 }
