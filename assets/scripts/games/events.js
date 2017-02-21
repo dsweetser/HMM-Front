@@ -28,11 +28,26 @@ const showGames = function (event) {
 //  ui.gameShow(api.getGames());
 };
 
+const createGame = function (event) {
+  event.preventDefault();
+  let data = {
+    game: getFormFields(event.target)
+  };
+  console.log(data);
+  api.newGame(data)
+  .then((response) => {
+    console.log(response);
+    ui.gameShow(response);
+  })
+  .catch(ui.problem);
+};
+
 
 
 const addHandlers = () => {
   $('#showGame').on('submit', showGame);
   $('#getGames').on('submit', showGames);
+  $('#createGame').on('submit',createGame)
 };
 
 module.exports = {
