@@ -12,14 +12,11 @@ const onSignUp = function (event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
-  $('#sign-up')[0].reset();
+  console.log(data);
   api.signUp(data)
     .then(ui.signUpYes)
     .catch(ui.signUpNo);
-
-  // $('.login').hide();
-  // $('.userstuff').show();
-
+  $('#sign-up')[0].reset();
 };
 
 const onSignIn = function (event) {
@@ -64,6 +61,7 @@ const onSignOut = function (event) {
   if ($('.alert')) {
     $('.alert').remove();
   }
+  $('#results').empty();
 
   api.signOut()
     .then(() => {
