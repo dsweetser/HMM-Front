@@ -41,6 +41,11 @@ const updateSession = function() {
   $('#update-session').toggle();
 };
 
+const deleteSession = function() {
+  hideAll();
+  $('#delete-session').toggle();
+};
+
 
 const addHandlers = () => {
   $('#show_a_game').on('click', showGame);
@@ -49,6 +54,7 @@ const addHandlers = () => {
   $('#get_mine').on('click', getMySessions);
   $('#create_session').on('click', createSession);
   $('#update_session').on('click', updateSession);
+  $('#delete_session').on('click', deleteSession);
 };
 
 module.exports ={
