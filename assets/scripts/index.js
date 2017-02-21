@@ -6,6 +6,8 @@ const authEvents = require('./auth/events');
 const sessionEvents = require('./sessions/events');
 const gameEvents = require('./games/events');
 
+
+
 $(() => {
   setAPIOrigin(location, config);
   $('.userstuff').hide();

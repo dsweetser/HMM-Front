@@ -52,6 +52,7 @@
   </form>
 
 
+
   <form class="userstuff" id="change-password">
     <fieldset>
       <span class="larger">Change Password:</span>
@@ -74,17 +75,34 @@
   </form>
 </div>
 
+<div class="col-xs-4 userstuff">
+  <div class="row larger">Game Actions</div>
+  <div class="row" id="show_a_game">Show A Game</div>
+  <div class="row" id="get_games">Show All Games</div>
+  <div class="row" id="create_game">Add a Game</div>
+  <div class="row larger">Session Actions</div>
+  <div class="row" id="get_mine">Show My Sessions</div>
+  <div class="row" id="create_session">Log a Session</div>
+  <div class="row" id="update_session">Update a Session</div>
+  <div class="row" id="delete_session">Delete a Session</div>
+</div>
+
 <div class="app">
   <div class="row">
   <p class="login intro">Hello, Welcome to How Many Meeples! This website allows you to log
     plays of your favorite board games and then interact with that data in various
     fun and interesting ways! Sign up and log in to get started!</p>
-  <form class="sessions userstuff" id="get-mine">
-    <fieldset>
-      <input type="submit" name="submit" value="Get My Sessions">
-    </fieldset>
-  </form>
 </div>
+
+  <div class="actions col-xs-6">
+
+  <div class="row">
+    <form class="sessions userstuff" id="get-mine">
+      <fieldset>
+        <input type="submit" name="submit" value="Get My Sessions">
+      </fieldset>
+    </form>
+  </div>
 
   <div class="row">
   <form class="sessions userstuff" id="create-session">
@@ -133,11 +151,13 @@
 </form>
 </div>
 
+<div class="row">
 <form class="sessions userstuff" id="getGames">
   <fieldset>
     <input type="submit" name="submit" value="Get All Games">
   </fieldset>
 </form>
+</div>
 
 <div class="row">
 <form class="sessions userstuff" id="createGame">
@@ -148,8 +168,9 @@
   </fieldset>
 </form>
 </div>
+</div>
 
-  <div id="results"></div>
+  <div class=" col-xs-8" id="results"></div>
   </div>
 </div>
 </body>
