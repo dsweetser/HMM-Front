@@ -75,26 +75,78 @@
 </div>
 
 <div class="app">
+  <div class="row">
   <p class="login intro">Hello, Welcome to How Many Meeples! This website allows you to log
     plays of your favorite board games and then interact with that data in various
     fun and interesting ways! Sign up and log in to get started!</p>
   <form class="sessions userstuff" id="get-mine">
     <fieldset>
-      <legend>Get My Sessions</legend>
       <input type="submit" name="submit" value="Get My Sessions">
     </fieldset>
   </form>
+</div>
 
   <div class="row">
-  <form class="sessions userstuff" id="create-sessions">
+  <form class="sessions userstuff" id="create-session">
     <fieldset>
       <legend>Create New Session</legend>
       <label>Game ID<input type="number" step="1" name="game_id"></label>
       <label>Number of Players<input type="number" step="1" name="players"></label>
       <label>Rating (1-5, whole numbers only)<input type="number" step="1" min="1" max="5" name="rating"></label>
+      <label>Session Notes</label><input type="text" class= "notes" name="notes">
       <input type="submit" value="Create New Session">
     </fieldset>
   </form>
+</div>
+
+<div class="row">
+<form class="sessions userstuff" id="update-session">
+  <fieldset>
+    <legend>Update Session</legend>
+    <label>Session ID<input type="number" step="1" name="id"></label>
+    <label>Game ID<input type="number" step="1" name="game_id"></label>
+    <label>Number of Players<input type="number" step="1" name="players"></label>
+    <label>Rating (1-5, whole numbers only)<input type="number" step="1" min="1" max="5" name="rating"></label>
+    <label>Session Notes</label><input type="text" class= "notes" name="notes">
+    <input type="submit" value="Update Session">
+  </fieldset>
+</form>
+</div>
+
+<div class="row">
+<form class="sessions userstuff" id="delete-session">
+  <fieldset>
+    <legend>Delete Session</legend>
+    <label>Session ID<input type="number" step="1" name="id"></label>
+    <input type="submit" value="Delete Session">
+  </fieldset>
+</form>
+</div>
+
+<div class="row">
+<form class="sessions userstuff" id="showGame">
+  <fieldset>
+    <legend>Show a Game</legend>
+    <label>Game ID<input type="number" step="1" name="id"></label>
+    <input type="submit" value="Show Game Name">
+  </fieldset>
+</form>
+</div>
+
+<form class="sessions userstuff" id="getGames">
+  <fieldset>
+    <input type="submit" name="submit" value="Get All Games">
+  </fieldset>
+</form>
+
+<div class="row">
+<form class="sessions userstuff" id="createGame">
+  <fieldset>
+    <legend>Add a Game</legend>
+    <label>Game Name<input type="text" name="name"></label>
+    <input type="submit" value="Add a Game">
+  </fieldset>
+</form>
 </div>
 
   <div id="results"></div>

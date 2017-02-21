@@ -13,6 +13,16 @@ const getSessions = function () {
   });
 };
 
+const getSession = function (id) {
+  return $.ajax({
+    url: `${config.apiOrigin}/sessions/${id}`,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
 const newSession = function (data) {
   return $.ajax({
     url: `${config.apiOrigin}/sessions/`,
@@ -24,7 +34,31 @@ const newSession = function (data) {
   });
 };
 
+const updateSession = function (data, id) {
+  return $.ajax({
+    url: `${config.apiOrigin}/sessions/${Math.floor(id)}`,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  });
+};
+
+const deleteSession = function (id) {
+  return $.ajax({
+    url: `${config.apiOrigin}/sessions/${id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
 module.exports = {
   getSessions,
-  newSession
+  newSession,
+  updateSession,
+  getSession,
+  deleteSession,
 };

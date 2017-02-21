@@ -1,12 +1,13 @@
 {{#each sessions as |session|}}
 
-  <ul><li><h1> <small>Game: {{session.game.name}}</small></h1></li>
-    <li>Number of Players: {{session.players}}</li>
-    <li>Your Rating: {{session.rating}}
-  <div>
+  <div class="session row"><h3>Game: {{session.game.name}}</h3>
+    <div class="data">Number of Players: {{session.players}} </div>
+    <div class="data">Your Rating: {{session.rating}} </div>
+    <div class="data">Session ID: {{session.id}}</div>
+  <div class="data">
     {{#if session.notes}}
-      <li>{{session.notes}}</li>
+      <div>Notes: {{session.notes}}</div>
     {{/if}}
-  </div></ul>
+  </div></div>
 
 {{/each}}
