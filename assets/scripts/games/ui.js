@@ -22,9 +22,16 @@ const gameShow = (response) => {
   $('#results').append(newGame(response));
 };
 
+const gamesShow = (response) => {
+  console.log(response);
+  $('#results').empty();
+  $('#results').append(gameDisplay(response));
+};
+
 module.exports = {
   failure,
   success,
   gameShow,
   problem,
+  gamesShow
 };

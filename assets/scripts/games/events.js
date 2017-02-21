@@ -22,7 +22,7 @@ const showGames = function (event) {
   event.preventDefault();
   api.getGames()
   .then((response) => {
-    ui.gameShow(response);
+    ui.gamesShow(response);
   })
   .catch(ui.problem);
 //  ui.gameShow(api.getGames());
@@ -33,10 +33,8 @@ const createGame = function (event) {
   let data = {
     game: getFormFields(event.target)
   };
-  console.log(data);
   api.newGame(data)
   .then((response) => {
-    console.log(response);
     ui.gameShow(response);
   })
   .catch(ui.problem);
@@ -47,7 +45,7 @@ const createGame = function (event) {
 const addHandlers = () => {
   $('#showGame').on('submit', showGame);
   $('#getGames').on('submit', showGames);
-  $('#createGame').on('submit',createGame)
+  $('#createGame').on('submit',createGame);
 };
 
 module.exports = {
