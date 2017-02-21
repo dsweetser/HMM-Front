@@ -10,7 +10,7 @@ const store = require('../store');
 
 const onSignUp = function (event) {
   event.preventDefault();
-
+  $('.alert').remove();
   let data = getFormFields(event.target);
   console.log(data);
   api.signUp(data)

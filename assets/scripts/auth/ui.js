@@ -10,7 +10,7 @@ const failure = (error) => {
 
 const signUpYes = () => {
   $('#sign-up').append(
-  '<div class="row"><div class="col-xs-10  alert" id="temp">New User Created!</div></div>');
+  '<div class="row"><div class="col-xs-10  alert larger" id="temp">New User Created!</div></div>');
   $('#sign-up')[0].reset();
 };
 
@@ -24,7 +24,7 @@ const signUpNo = () => {
 
 const changePasswordYes = () =>{
   $('#change-password').append(
-  '<div class="row"><div class="col-xs-10 alert" id="temp">Password Successfully Changed!</div></div>');
+  '<div class="row"><div class="col-xs-10 alert larger" id="temp">Password Successfully Changed!</div></div>');
     $('#change-password')[0].reset();
 };
 
