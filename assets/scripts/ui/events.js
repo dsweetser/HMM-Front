@@ -36,6 +36,11 @@ const createSession = function() {
   $('#create-session').toggle();
 };
 
+const updateSession = function() {
+  hideAll();
+  $('#update-session').toggle();
+};
+
 
 const addHandlers = () => {
   $('#show_a_game').on('click', showGame);
@@ -43,6 +48,7 @@ const addHandlers = () => {
   $('#create_game').on('click', createGame);
   $('#get_mine').on('click', getMySessions);
   $('#create_session').on('click', createSession);
+  $('#update_session').on('click', updateSession);
 };
 
 module.exports ={
