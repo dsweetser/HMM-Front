@@ -5,6 +5,7 @@ const config = require('./config');
 const authEvents = require('./auth/events');
 const sessionEvents = require('./sessions/events');
 const gameEvents = require('./games/events');
+const uiNav = require('./ui/events');
 
 
 
@@ -14,6 +15,7 @@ $(() => {
   authEvents.addHandlers();
   sessionEvents.addHandlers();
   gameEvents.addHandlers();
+  uiNav.addHandlers();
 });
 
 // use require with a reference to bundle the file and use it in this file

@@ -41,9 +41,20 @@ const signInNo = () =>{
     '<div class="row"><div class="col-xs-10 red alert" id="temp"><h3>Invalid Username or Password</h3></div></div>');
 };
 
+const hideAll = function() {
+  $('#showGame').hide();
+  $('#getGames').hide();
+  $('#createGame').hide();
+  $('#get-mine').hide();
+  $('#create-session').hide();
+  $('#update-session').hide();
+  $('#delete-session').hide();
+};
+
 const signInYes = () => {
   $('.login').hide();
   $('.userstuff').show();
+  hideAll();
 };
 
 module.exports = {
