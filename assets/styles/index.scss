@@ -5,6 +5,8 @@ $medgreen: #05a335;
 $red: #dd2407;
 $medblue: #0a6a8a;
 $lightorange: #fda447;
+$darkred: #550c00;
+$darkgreen: #007724;
 
 
 body {
@@ -21,8 +23,8 @@ legend {
 }
 
 .auth {
-  background: $medgreen;
-  border: 10px solid $dark;
+  background: $darkgreen;
+  border: 10px solid $darkred;
   margin-bottom: 20px;
   padding: 5px;
 }
@@ -40,4 +42,8 @@ legend {
 .box {
   margin: 0 auto;
   width: 400px;
+}
+
+input {
+  background: $darkred;
 }
