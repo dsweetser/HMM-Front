@@ -3,6 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`);
 const ui = require('./ui');
 const api = require('./api');
+const instructions = require('../templates/instructions.handlebars');
 
 // const ui = require('./ui');
 
@@ -34,7 +35,7 @@ const onSignIn = function (event) {
     .then(ui.signInYes)
     .catch(ui.signInNo);
     $('#sign-in')[0].reset();
-    $('#results').append("<p>Welcome to How Many Meeples! If you haven't used the site before, you can use the above links to access our functionality. You can view and add games to our collection, record your play sessions, and look up the sessions that you've played.</p>");
+    $('#results').append(instructions());
 };
 
 const onChangePassword = function (event) {
