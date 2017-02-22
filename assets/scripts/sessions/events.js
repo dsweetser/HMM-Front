@@ -44,6 +44,7 @@ const recordNewSession = function (event) {
     ui.newSessionResponse(response);
   })
   .catch(ui.problem);
+  $('#create-session')[0].reset();
 };
 
 // updates a session with the server
@@ -64,6 +65,7 @@ const updateMySession = function (event) {
     ui.updated(response);
   })
   .catch(ui.destroyOrUpdateError);
+  $('#update-session')[0].reset();
 };
 
 //destroys a session
@@ -73,6 +75,7 @@ const destroySession = function (event) {
   api.deleteSession(id.id)
   .then(ui.destroyed)
   .catch(ui.destroyOrUpdateError);
+  $('#delete-session')[0].reset();
 };
 
 const addHandlers = () => {

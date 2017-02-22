@@ -38,6 +38,7 @@ const createGame = function (event) {
     ui.gameShow(response);
   })
   .catch(ui.problem);
+  $('#createGame')[0].reset();
 };
 
 
