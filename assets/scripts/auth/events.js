@@ -34,6 +34,7 @@ const onSignIn = function (event) {
     .then(ui.signInYes)
     .catch(ui.signInNo);
     $('#sign-in')[0].reset();
+    $('#results').append("<p>Welcome to How Many Meeples! If you haven't used the site before, you can use the links to the left to access our functionality.</p>");
 };
 
 const onChangePassword = function (event) {
