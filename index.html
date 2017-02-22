@@ -108,11 +108,11 @@
   <form class="sessions userstuff" id="create-session">
     <fieldset>
       <legend>Create New Session</legend>
-      <label>Game ID<input type="number" step="1" name="game_id"></label>
-      <label>Number of Players<input type="number" step="1" min="1" name="players"></label>
-      <label>Rating (1-5, whole numbers only)<input type="number" step="1" min="1" max="5" name="rating"></label>
-      <label>Session Notes</label><input type="text" class= "notes" name="notes">
-      <input type="submit" value="Create New Session">
+      <div><label>Game ID:</label><input class="box" type="number" step="1" name="game_id"></div>
+      <div><label>Number of Players:</label><input class="box" type="number" step="1" min="1" name="players"></div>
+      <div><label>Rating (1-5, whole numbers only):</label><input class="box" type="number" step="1" min="1" max="5" name="rating"></div>
+      <div><label>Session Notes:</label><input type="text" class= "notes box" name="notes"></div>
+      <div><input type="submit" value="Create New Session"></div>
     </fieldset>
   </form>
 </div>
@@ -121,12 +121,12 @@
 <form class="sessions userstuff" id="update-session">
   <fieldset>
     <legend>Update Session</legend>
-    <label>Session ID<input type="number" step="1" name="id"></label>
-    <label>Game ID<input type="number" step="1" name="game_id"></label>
-    <label>Number of Players<input type="number" step="1" min="1" name="players"></label>
-    <label>Rating (1-5, whole numbers only)<input type="number" step="1" min="1" max="5" name="rating"></label>
-    <label>Session Notes</label><input type="text" class= "notes" name="notes">
-    <input type="submit" value="Update Session">
+    <div><label>Session ID:</label><input class="box" type="number" step="1" name="id"></div>
+    <div><label>Game ID:</label><input class="box" type="number" step="1" name="game_id"></div>
+    <div><label>Number of Players:</label><input class="box" type="number" step="1" min="1" name="players"></div>
+    <div><label>Rating (1-5, whole numbers only):</label><input class="box" type="number" step="1" min="1" max="5" name="rating"></div>
+    <div><label>Session Notes:</label><input type="text" class= "notes box" name="notes"></div>
+    <div><input type="submit" value="Update Session"></div>
   </fieldset>
 </form>
 </div>
@@ -135,7 +135,7 @@
 <form class="sessions userstuff" id="delete-session">
   <fieldset>
     <legend>Delete Session</legend>
-    <label>Session ID<input type="number" step="1" name="id"></label>
+    <label>Session ID:</label><input class="box" type="number" step="1" name="id">
     <input type="submit" value="Delete Session">
   </fieldset>
 </form>
@@ -145,7 +145,7 @@
 <form class="sessions userstuff" id="showGame">
   <fieldset>
     <legend>Show a Game</legend>
-    <label>Game ID<input type="number" step="1" name="id"></label>
+    <label>Game ID:</label><input class="box" type="number" step="1" name="id">
     <input type="submit" value="Show Game Name">
   </fieldset>
 </form>
@@ -160,10 +160,10 @@
 </div>
 
 <div class="">
-<form class="sessions userstuff larger" id="createGame">
+<form class="sessions userstuff" id="createGame">
   <fieldset>
-    <legend>Add a Game</legend>
-    <label>Game Name<input type="text" name="name"></label>
+    <legend><span class="larger">Add a Game</span></legend>
+    <label>Game Name:</label><input class="box" type="text" name="name">
     <input type="submit" value="Add a Game">
   </fieldset>
 </form>
