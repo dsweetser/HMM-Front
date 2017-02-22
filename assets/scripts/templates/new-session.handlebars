@@ -1,3 +1,3 @@
-<div class="session row"><h3>New game of: {{this.game.name}} recorded with {{this.players}} players,
-  and a rating of {{this.rating}}.  You can modify this with the Session ID: {{this.id}}.</h3>
+<div class="session row"><h3>New game of: {{this.game.name}} (ID:{{this.game.id}}) recorded with {{this.players}} players,
+  and a rating of {{this.rating}}.{{#if this.notes}} Your notes for this session are: {{this.notes}}{{/if}}. You can modify this with the Session ID: {{this.id}}.</h3>
 </div>
