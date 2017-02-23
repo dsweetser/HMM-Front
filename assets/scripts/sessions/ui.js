@@ -14,7 +14,7 @@ const failure = (error) => {
 
 const mySessionsSuccess = (data) => {
   $('#results').empty();
-  console.log(data);
+  //console.log(data);
   if (data.length === 0) {
     $('#results').append('<h3>Sadly, you do not have any sessions yet!</h3>');
   } else {
@@ -40,7 +40,7 @@ const destroyed = function() {
 
 const updated = function (data) {
   $('#results').empty();
-  console.log(data.session);
+  //console.log(data.session);
   $('#results').append(updatedSession(data.session));
 };
 

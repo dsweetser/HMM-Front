@@ -17,13 +17,13 @@ const problem = () => {
 };
 
 const gameShow = (response) => {
-  console.log(response);
+  //console.log(response);
   $('#results').empty();
   $('#results').append(newGame(response));
 };
 
 const gamesShow = (response) => {
-  console.log(response);
+  ..console.log(response);
   $('#results').empty();
   $('#results').append(gameDisplay(response));
 };

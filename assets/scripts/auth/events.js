@@ -13,7 +13,7 @@ const onSignUp = function (event) {
   event.preventDefault();
   $('.alert').remove();
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.signUp(data)
     .then(ui.signUpYes)
     .catch(ui.signUpNo);

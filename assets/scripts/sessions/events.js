@@ -38,7 +38,7 @@ const recordNewSession = function (event) {
   data.session.players = Math.floor(data.session.players);
   data.session.rating = Math.floor(data.session.rating);
   data.session.notes = data.session.notes.toString();
-  console.log(data);
+  //console.log(data);
   api.newSession(data)
   .then((response) =>{
     ui.newSessionResponse(response);

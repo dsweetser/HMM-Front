@@ -9,7 +9,7 @@ const showGame = function(event) {
   event.preventDefault();
   $('#results').empty();
   let data = getFormFields(event.target);
-  console.log(data.id);
+  //console.log(data.id);
   api.getGame(data.id)
   .then((response) => {
     $('#results').append('<h3>' + response.game.name + '</h3>');
