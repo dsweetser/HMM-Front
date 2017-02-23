@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How Many Meeples?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <div class="container">
+
+<div class="auth">
+  <form class="login" id="sign-in">
+    <fieldset>
+      <span class="larger">Sign in:</span>
+      <label>
+        Email
+        <input type="text" name="credentials[email]">
+      </label>
+      <label>
+        Password
+        <input class="password" type="password" name="credentials[password]">
+      </label>
+      <input type="submit" name="submit" value="Sign in!">
+    </fieldset>
+  </form>
+
+  <form class="login" id="sign-up">
+    <fieldset>
+      <span class="larger">Sign up:</span>
+        <label>
+          Email
+          <input type="text" name="credentials[email]">
+        </label>
+        <label>
+          Password
+          <input class="password" type="password" name="credentials[password]">
+        </label>
+        <label>
+          Password Confirmation
+          <input class="password" type="password" name="credentials[password_confirmation]">
+        </label>
+      <input type="submit" name="submit" value="Sign up!">
+    </fieldset>
+  </form>
+
+
+
+  <form class="userstuff" id="change-password">
+    <fieldset>
+      <span class="larger">Change Password:</span>
+        <label>
+          Current Password
+          <input class="password" type="password" name="passwords[old]">
+        </label>
+        <label>
+          New Password
+          <input class="password" type="password" name="passwords[new]">
+        </label>
+      <input type="submit" name="submit" value="Change Password!">
+    </fieldset>
+  </form>
+
+  <form class="userstuff" id="sign-out">
+    <fieldset>
+      <input type="submit" name="submit" value="Sign Out!">
+    </fieldset>
+  </form>
+</div>
+
+<div class="col-xs-4 userstuff">
+  <div class=" larger">Game Actions</div>
+  <div class="" id="show_a_game">Show A Game</div>
+  <div class="" id="get_games">Show All Games</div>
+  <div class="" id="create_game">Add a Game</div>
+  <div class=" larger">Session Actions</div>
+  <div class="" id="get_mine">Show My Sessions</div>
+  <div class="" id="create_session">Log a Session</div>
+  <div class="" id="update_session">Update a Session</div>
+  <div class="" id="delete_session">Delete a Session</div>
+</div>
+
+<div class="app">
+  <div class="">
+  <p class="login intro">Hello, Welcome to How Many Meeples! This website allows you to log
+    plays of your favorite board games and then interact with that data in various
+    fun and interesting ways! Sign up and log in to get started!</p>
+</div>
+
+  <div class="actions col-xs-6">
+
+  <div class="">
+    <form class="sessions userstuff" id="get-mine">
+      <fieldset>
+        <input type="submit" name="submit" value="Get My Sessions">
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="">
+  <form class="sessions userstuff" id="create-session">
+    <fieldset>
+      <legend>Create New Session</legend>
+      <div><label>Game ID:</label><input class="box" type="number" step="1" name="game_id"></div>
+      <div><label>Number of Players:</label><input class="box" type="number" step="1" min="1" name="players"></div>
+      <div><label>Rating (1-5, whole numbers only):</label><input class="box" type="number" step="1" min="1" max="5" name="rating"></div>
+      <div><label>Session Notes:</label><input type="text" class= "notes box" name="notes"></div>
+      <div><input type="submit" value="Create New Session"></div>
+    </fieldset>
+  </form>
+</div>
+
+<div class="">
+<form class="sessions userstuff" id="update-session">
+  <fieldset>
+    <legend>Update Session</legend>
+    <div><label>Session ID:</label><input class="box" type="number" step="1" name="id"></div>
+    <div><label>Game ID:</label><input class="box" type="number" step="1" name="game_id"></div>
+    <div><label>Number of Players:</label><input class="box" type="number" step="1" min="1" name="players"></div>
+    <div><label>Rating (1-5, whole numbers only):</label><input class="box" type="number" step="1" min="1" max="5" name="rating"></div>
+    <div><label>Session Notes:</label><input type="text" class= "notes box" name="notes"></div>
+    <div><input type="submit" value="Update Session"></div>
+  </fieldset>
+</form>
+</div>
+
+<div class="">
+<form class="sessions userstuff" id="delete-session">
+  <fieldset>
+    <legend>Delete Session</legend>
+    <label>Session ID:</label><input class="box" type="number" step="1" name="id">
+    <input type="submit" value="Delete Session">
+  </fieldset>
+</form>
+</div>
+
+<div class="">
+<form class="sessions userstuff" id="showGame">
+  <fieldset>
+    <legend>Show a Game</legend>
+    <label>Game ID:</label><input class="box" type="number" step="1" name="id">
+    <input type="submit" value="Show Game Name">
+  </fieldset>
+</form>
+</div>
+
+<div class="">
+<form class="sessions userstuff" id="getGames">
+  <fieldset>
+    <input type="submit" name="submit" value="Get All Games">
+  </fieldset>
+</form>
+</div>
+
+<div class="">
+<form class="sessions userstuff" id="createGame">
+  <fieldset>
+    <legend><span class="larger">Add a Game</span></legend>
+    <label>Game Name:</label><input class="box" type="text" name="name">
+    <input type="submit" value="Add a Game">
+  </fieldset>
+</form>
+</div>
+</div>
+
+  <div class="row col-xs-12 results" id="results"></div>
+  </div>
+</div>
+</body>
+
+</html>
