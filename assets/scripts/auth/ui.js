@@ -1,5 +1,7 @@
 'use strict';
 
+const instructions = require('../templates/instructions.handlebars');
+
 const success = (data) => {
   console.log(data);
 };
@@ -37,6 +39,7 @@ const changePasswordNo = () =>{
 };
 
 const signInNo = () =>{
+  $('#results').empty();
   $('#sign-in').append(
     '<div class="row"><div class="col-xs-10 red alert" id="temp"><h3>Invalid Username or Password</h3></div></div>');
 };
@@ -54,6 +57,8 @@ const hideAll = function() {
 const signInYes = () => {
   $('.login').hide();
   $('.userstuff').show();
+  $('#results').empty();
+  $('#results').append(instructions());
   hideAll();
 };
 

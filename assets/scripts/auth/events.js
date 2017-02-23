@@ -3,7 +3,6 @@
 const getFormFields = require(`../../../lib/get-form-fields`);
 const ui = require('./ui');
 const api = require('./api');
-const instructions = require('../templates/instructions.handlebars');
 
 // const ui = require('./ui');
 
@@ -35,7 +34,6 @@ const onSignIn = function (event) {
     .then(ui.signInYes)
     .catch(ui.signInNo);
     $('#sign-in')[0].reset();
-    $('#results').append(instructions());
 };
 
 const onChangePassword = function (event) {
