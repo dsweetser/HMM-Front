@@ -52,7 +52,6 @@ const updateMySession = function (event) {
   event.preventDefault();
   let data = {};
   data.session = getFormFields(event.target);
-  console.log(api.getSession(data.session.id));
   // sets up the original session data to fill nulls
   // console.log(data.session.id);
   // let oldData = api.getSession(data.session.id);
