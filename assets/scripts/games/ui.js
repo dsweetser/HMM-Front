@@ -23,7 +23,7 @@ const gameShow = (response) => {
 };
 
 const gamesShow = (response) => {
-  ..console.log(response);
+  //console.log(response);
   $('#results').empty();
   $('#results').append(gameDisplay(response));
 };
