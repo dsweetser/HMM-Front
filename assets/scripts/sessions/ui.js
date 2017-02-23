@@ -14,14 +14,18 @@ const failure = (error) => {
 
 const mySessionsSuccess = (data) => {
   $('#results').empty();
+  console.log(data);
+  if (data.length === 0) {
+    $('#results').append('<h3>Sadly, you do not have any sessions yet!</h3>');
+  } else {
   let sessionsList = userSessions({ sessions: data });
-  console.log(sessionsList);
   $('#results').append(sessionsList);
+}
 };
 
 const problem = () => {
   $('#results').empty();
-  $('#results').append('<h3 class="red">Oh dear, something has gone awry...');
+  $('#results').append('<h3 class="red">Oh dear, something has gone awry...</h3>');
 };
 
 const newSessionResponse = (data) => {
